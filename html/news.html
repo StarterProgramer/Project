@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/news.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Stories</title>
+  <link rel="stylesheet" href="news.css">
 </head>
 <body>
-    
-    <script src="/js/news.js"></script>
+  <div class="container">
+    <div class="header">
+      <h1>Character Stories</h1>
+      <p class="subtitle">Dive into the tales of our fascinating characters</p>
+    </div>
+    <div class="main">
+      <div class="image-section">
+        <img id="characterImage" src="https://via.placeholder.com/400" alt="Character Image">
+      </div>
+      <div class="info-section">
+        <h2 id="characterName">Amelia Whitney</h2>
+        <p id="characterDescription">
+          Amelia Whitney, born on February 5, 1973, is an adventurous and independent spirit. 
+          Her journey from tragedy to finding purpose inspires all who know her.
+        </p>
+        <div class="buttons">
+          <button onclick="prevCharacter()">Previous</button>
+          <button onclick="nextCharacter()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="news.js"></script>
 </body>
 </html>
