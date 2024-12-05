@@ -2,16 +2,14 @@ const chatbox = document.getElementById('chatbox');
 const userInput = document.getElementById('userInput');
 const sendButton = document.getElementById('sendButton');
 
-// Append message to the chatbox
 function appendMessage(content, sender) {
     const message = document.createElement('div');
     message.classList.add('message', sender);
     message.textContent = content;
     chatbox.appendChild(message);
-    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to bottom
+    chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-// Function to get bot response using OpenAI API
 async function getBotResponse(userText) {
     console.log("Sending request to OpenAI API...");
     
@@ -19,7 +17,7 @@ async function getBotResponse(userText) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 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` // Replace with your valid API key
+            'Authorization': `Bearer ` 
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
@@ -31,9 +29,8 @@ async function getBotResponse(userText) {
         console.log("Error with response:", response.status, response.statusText);
         if (response.status === 429) {
             console.log("Rate limit exceeded. Retrying...");
-            // Wait for 5 seconds before retrying
             await new Promise(resolve => setTimeout(resolve, 5000));
-            return await getBotResponse(userText); // Retry the request
+            return await getBotResponse(userText);
         }
         return "Sorry, something went wrong.";
     } else {
@@ -43,21 +40,18 @@ async function getBotResponse(userText) {
     }
 }
 
-// Event listener for send button click
 sendButton.addEventListener('click', async () => {
     const userText = userInput.value.trim();
     console.log("User input:", userText);
     
     if (userText) {
         appendMessage(userText, 'user');
-        userInput.value = ''; // Clear input field
+        userInput.value = ''; 
 
-        // Get bot's reply
         const botReply = await getBotResponse(userText);
         console.log("Bot reply:", botReply);
         appendMessage(botReply, 'bot');
     }
 });
 
-// Initial message from bot
 appendMessage("You see a vast, ruined city with abandoned cars and eerie silence. What's your next move?", 'bot');
