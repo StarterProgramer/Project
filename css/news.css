@@ -7,80 +7,80 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.container {
+  }
+  
+  .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 900px;
     background: #121212;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     overflow: hidden;
-}
-
-.header {
+  }
+  
+  .header {
     text-align: center;
     padding: 20px;
     background: #1a1a1a;
     border-bottom: 2px solid #3a3a3a;
-}
-
-.header h1 {
+  }
+  
+  .header h1 {
     margin: 0;
     font-size: 2.5rem;
     color: #7bff00;
-}
-
-.header .subtitle {
+  }
+  
+  .header .subtitle {
     margin: 5px 0 0;
     font-size: 1.2rem;
     color: #58d800;
-}
-
-.main {
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slides {
     display: flex;
-    flex-wrap: wrap;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
-}
-
-.image-section {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-}
-
-.image-section img {
-    max-width: 100%;
+  }
+  
+  .slide img {
+    max-width: 200px;
+    height: auto;
     border-radius: 10px;
-    border: 3px solid #7bff00;
-}
-
-.info-section {
-    flex: 1;
-    padding: 20px;
-    background: #181818;
-    border-radius: 10px;
-}
-
-.info-section h2 {
-    font-size: 1.8rem;
+    border: 2px solid #7bff00;
+  }
+  
+  .slide h2 {
     color: #a8ff60;
-}
-
-.info-section p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.buttons {
+  }
+  
+  .slide p {
+    color: #58d800;
+  }
+  
+  .controls {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.buttons button {
-    flex: 1;
-    padding: 15px;
+    justify-content: space-between;
+    padding: 10px;
+    background: #1a1a1a;
+  }
+  
+  button {
+    padding: 10px 20px;
     font-size: 1rem;
     background: #222;
     border: 1px solid #444;
@@ -88,11 +88,17 @@ body {
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.buttons button:hover {
+  }
+  
+  button:hover {
     background: #7bff00;
     color: #000;
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-}
+  }
+
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
